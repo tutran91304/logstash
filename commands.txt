@@ -1,0 +1,48 @@
+curl -X DELETE "172.17.0.3:9200/cars"
+
+-----Original Message-----
+From: Tran, Tu M CIV (US) <tu.tran2@navy.mil> 
+Sent: Thursday, March 28, 2019 1:30 PM
+To: Tran, Tu M CIV (US) <tu.tran2@navy.mil>
+Subject: RE: Docker commands
+
+curl -XPOST '172.17.0.3:9200/cars/_search?pretty' -d '{"query": {"bool": {
+"must": [{"match": {"maker": "tesla"}}, {"match": {"model": "S"}}]}}}'
+--header "Content-Type: application/json"
+
+-----Original Message-----
+From: Tran, Tu M CIV (US) <tu.tran2@navy.mil> 
+Sent: Thursday, March 28, 2019 1:17 PM
+To: Tran, Tu M CIV (US) <tu.tran2@navy.mil>
+Subject: RE: Docker commands
+
+sudo docker run --net=host --rm -it -v
+~/logstash/pipeline/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+-v ~/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml -v
+~/logstash/data:/mydata docker.elastic.co/logstash/logstash:6.7.0
+
+
+curl -XPOST '172.17.0.3:9200/cars/_search?pretty' -d '{"query":
+{"match_all": {}}}' --header "Content-Type: application/json"
+
+
+-----Original Message-----
+From: Tran, Tu M CIV (US) <tu.tran2@navy.mil> 
+Sent: Wednesday, March 27, 2019 5:36 PM
+To: Tran, Tu M CIV (US) <tu.tran2@navy.mil>
+Subject: Docker commands
+
+sudo docker inspect 277c7ca741ec
+
+ 
+
+sudo docker ps
+
+ 
+
+sudo docker run --net=host --rm -it -v
+~/settings/logstash.conf:/usr/share/logstash/pipeline/logstash.conf -v
+~/settings/logstash.yml:/usr/share/logstash/config/logstash.yml
+docker.elastic.co/logstash/logstash:6.7.0
+
+
