@@ -1,4 +1,19 @@
+docker run --rm -it -v ~/logstash/pipeline/logstash.conf:/usr/share/logstash/pipeline/logstash.conf -v ~/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml -v ~/logstash/data:/mydata docker.elastic.co/logstash/logstash:6.7.0
+
+curl -XPOST '172.17.0.2:9200/cars/_search?pretty' -d '{"query": {"bool": {"must": [{"match": {"maker": "tesla"}}, {"match": {"model": "3"}}]}}}' --header "Content-Type: application/json"
+
+
+
+
+docker run --rm -it -v ~/logstash/pipeline/logstash.conf:/usr/share/logstash/pipeline/logstash.conf -v ~/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml -v ~/logstash/data:/mydata docker.elastic.co/logstash/logstash:6.7.0
+
 curl -X DELETE "172.17.0.3:9200/cars"
+
+
+curl -XPOST '172.17.0.3:9200/cars/_search?pretty' -d '{"query": {"bool": {
+"must": [{"match": {"maker": "tesla"}}, {"match": {"model": "S"}}]}}}'
+--header "Content-Type: application/json"
+
 
 -----Original Message-----
 From: Tran, Tu M CIV (US) <tu.tran2@navy.mil> 
