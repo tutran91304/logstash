@@ -219,7 +219,7 @@
 #xpack.monitoring.enabled: false
 #xpack.monitoring.elasticsearch.username: logstash_system
 #xpack.monitoring.elasticsearch.password: password
-xpack.monitoring.elasticsearch.hosts: ["https://172.17.0.3:9200", "https://172.17.0.3:9200"]
+xpack.monitoring.elasticsearch.hosts: ["https://172.17.0.2:9200", "https://172.17.0.2:9200"]
 #xpack.monitoring.elasticsearch.ssl.certificate_authority: [ "/path/to/ca.crt" ]
 #xpack.monitoring.elasticsearch.ssl.truststore.path: path/to/file
 #xpack.monitoring.elasticsearch.ssl.truststore.password: password
@@ -236,7 +236,7 @@ xpack.monitoring.elasticsearch.hosts: ["https://172.17.0.3:9200", "https://172.1
 #xpack.management.pipeline.id: ["main", "apache_logs"]
 #xpack.management.elasticsearch.username: logstash_admin_user
 #xpack.management.elasticsearch.password: password
-xpack.management.elasticsearch.hosts: ["https://172.17.0.3:9200", "https://172.17.0.3:9200"]
+xpack.management.elasticsearch.hosts: ["https://172.17.0.2:9200", "https://172.17.0.2:9200"]
 #xpack.management.elasticsearch.ssl.certificate_authority: [ "/path/to/ca.crt" ]
 #xpack.management.elasticsearch.ssl.truststore.path: /path/to/file
 #xpack.management.elasticsearch.ssl.truststore.password: password
